@@ -1,0 +1,40 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: sqlconfighub-config
+  namespace: default
+  labels:
+    app: sqlconfighub
+    tier: backend
+    track: stable
+    version: v1.0.0
+data:  
+  GLOBAL_SECTION:
+        DB_CORE_SALES: CORE_SALES
+        SCHM_CURATED_SALES: CURATED_SALES
+        DB_CORE_PR: CORE_PR
+        SCHM_CURATED_DISCOUNT: CURATED_DISCOUNT
+        DB_CORE: CORE
+        SCHM_CURATED_CUSTOMER: CURATED_CUSTOMER
+        SCHM_CURATED_SKU: CURATED_SKU
+        DB_CORE_FS: CORE_FS
+        SCHM_CURATED_METRICS: CURATED_METRICS
+        SCHM_CURATED_PROMO: CURATED_PROMO
+  CUSTOMER_SALES:
+    TBL_SALES: SALES
+    TBL_DISCOUNTS: DISCOUNTS
+    TBL_CUSTOMERS: CUSTOMERS
+  SKU_PROMO_SALES:
+    TBL_SALES: SALES
+    TBL_SKUS: SKUS
+    TBL_METRICS: METRICS
+    TBL_DISCOUNTS: DISCOUNTS
+    TBL_PROMOTIONS: PROMOTIONS
+  PROMO_SALES2:
+    TBL_DISCOUNTS: discounts
+    TBL_SALES: sales_promo
+    TBL_PROMOTIONS: promotions
+  REG_DISC:
+    TBL_DISCOUNTS: discounts
+    TBL_SKUS: skus
+    TBL_SALES: sales
